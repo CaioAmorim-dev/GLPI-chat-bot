@@ -1,0 +1,13 @@
+# TWILIO
+TWILIO_ACCOUNT_SID=coloque_aqui_o_sid_da_sua_conta
+TWILIO_AUTH_TOKEN=coloque_aqui_o_token_da_sua_conta
+TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886  # número padrão do sandbox Twilio
+
+# GLPI
+GLPI_URL=http://seu-servidor-glpi/apirest.php
+GLPI_APP_TOKEN=sua_app_token
+GLPI_USER_TOKEN=seu_user_token
+
+# OLLAMA
+OLLAMA_URL=http://localhost:11434/api/generate
+OLLAMA_MODEL=llama3
