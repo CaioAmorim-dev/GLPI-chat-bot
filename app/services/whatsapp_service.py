@@ -32,3 +32,19 @@ def send_message(to: str, message: str):
         data=payload,
         auth=(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
     )
+
+    # Tratamento de erros e logs informativos
+    if response.status_code not in (200, 201):
+        try:
+            error_message = response.json().get("message", "Erro desconhecido")
+        except Exception:
+            error_message = response.text
+        print(f"❌ Erro ao enviar mensagem ({response.status_code}): {error_message}")
+    else:
+        print("✅ Mensagem enviada com sucesso!")
+
+    # Retorna o corpo da resposta em JSON para uso posterior
+    try:
+        return response.json()
+    except Exception:
+        return {"error": "Falha ao interpretar resposta do Twilio."}
